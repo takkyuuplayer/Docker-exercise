@@ -1,0 +1,10 @@
+wordpress:  # Service Name
+    image: wordpress
+    links:
+        - dbms:mysql
+    ports:
+        - 8080:80 # Port forwarding from Host to container
+dbms:
+    image: mysql
+    environment:
+        - MYSQL_ROOT_PASSWORD=password
