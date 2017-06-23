@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    image: nginx
+    container_name: nginx_test
+    volumes:
+      - ./:/srv/
+    ports:
+     - "8080:80"
+    tty: true
+    command: nginx -g 'daemon off;'
+    working_dir: /srv
